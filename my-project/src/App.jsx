@@ -1,9 +1,10 @@
-import ReactDOM from "react-dom/client";
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Hero from "./pages/LandingPage/Hero";
 import './index.css'
-import { useState, useEffect } from "react";
-import LandingPage from "./pages/LandingPage/LandingPage";
+import Login from "./pages/Login/Login";
+import Signup from "./pages/Signup/Signup";
+
 
 export default function App() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -31,14 +32,16 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<LandingPage mousePosition= {mousePosition} handleMouseMove={handleMouseMove} isMobile={isMobile} />}>
+        <Route path="/" element={<Hero />}/>
+          <Route path="/loginpage" element={<Login />} />
+          <Route path="/signuppage" element={<Login />} />
         
-          
-        </Route>
+        
       </Routes>
     </BrowserRouter>
   );
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App />);
+// const rootElement = document.getElementById('root');
+// const root = ReactDOM.createRoot(rootElement);  // Ensure createRoot() is called only once
+// root.render(<App />);
