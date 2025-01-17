@@ -32,7 +32,7 @@ const Navbar = () => {
 
 const Hero = (props) => {
   return (
-    <div className=" hero w-full h-screen fixed " onMouseMove={props.handleMouseMove}>
+    <div className=" hero w-full h-screen relative " onMouseMove={props.handleMouseMove}>
       <Navbar />
       <div className="mt-4 hero-content w-full flex items-center justify-center h-screen px-4 sm:px-16">
         <div className="w-full h-full flex flex-col md:flex-row items-center  justify-between gap-8 p-12 border shadow-2xl shadow-yellow-300 border-yellow-200 rounded-3xl">
@@ -55,7 +55,7 @@ const Hero = (props) => {
             </div>
           </div>
 
-          <div className=" md:relative fixed md:translate-y-0 translate-y-60 -z-50 w-full sm:w-1/2 h-56 md:h-96 flex items-center justify-center">
+          <div className=" md:relative absolute md:translate-y-0 translate-y-60 -z-50 w-full sm:w-1/2 h-56 md:h-96 flex items-center justify-center">
             <Canvas className="w-full h-full xl:h-screen ">
               <ambientLight intensity={0.5} />
               <directionalLight intensity={1} position={[2, 2, 2]} />
